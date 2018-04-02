@@ -2,7 +2,6 @@ package com.esipovich.masterclass.arraylist;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author Artem Esipovich 01.04.2018
@@ -54,17 +53,14 @@ public class MobilePhone {
         if (foundPosition < 0) {
             System.out.println(oldContact.getName() + " wasn't found");
             return false;
+        } else if (findContact(newContact.getName()) != -1){
+            System.out.println("Contact with name " + newContact.getName() + " already exists");
+            return false;
         }
+
         this.contacts.set(foundPosition, newContact);
         System.out.println(oldContact.getName() + " was replaced with " + newContact.getName());
         return true;
-    }
-
-    private String queryContact(Contact contact) {
-        if (findContact(contact) >= 0) {
-            return contact.getName();
-        }
-        return null;
     }
 
     public Contact queryContact(String name) {
