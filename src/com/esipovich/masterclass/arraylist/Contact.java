@@ -22,12 +22,12 @@ public class Contact {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     @Override
     public String toString() {
         return "Contact: " + name + ", phone: " + phoneNumber;
+    }
+
+    public static Contact createNewContact(String name, String phoneNumber){
+        return new Contact(name, phoneNumber);
     }
 }
