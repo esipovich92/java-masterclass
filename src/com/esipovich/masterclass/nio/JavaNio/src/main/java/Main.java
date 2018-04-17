@@ -20,6 +20,8 @@ public class Main {
        readWriteLines();
 
         writeBinFile();
+
+        copyFile();
     }
 
     private static void readWriteLines() {
@@ -45,6 +47,16 @@ public class Main {
             ByteBuffer buffer = ByteBuffer.wrap(outputBytes);
             int numBytes = channel.write(buffer);
             System.out.println("Num bytes " + numBytes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void copyFile() {
+        Path sourceFile = FileSystems.getDefault().getPath("data.txt");
+        Path resultFile = FileSystems.getDefault().getPath("copiedData.txt");
+        try {
+            Files.copy(sourceFile, resultFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
