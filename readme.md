@@ -1,8 +1,8 @@
 # java-masterclass
 
-Homeworks of the masterclass "Complete Java Masterclass", by materials of Learn Programming academy
+Homeworks of the masterclass "Complete Java Masterclass"
 
-In the course is considered Java Core: 
+In the course is considered Java Core including: 
   - OOP
   - Collections
   - Generics
